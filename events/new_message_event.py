@@ -13,13 +13,13 @@ from pyrogram.errors import (
 
 
 @Client.on_message()
-async def new_message_event(client, message):
+async def new_message_event(client, sticker):
     try:
-        #print(message)
-        with open(message) as file:
-            data=json.load(file)
+        print(sticker)
+        #with open(message) as file:
+        #    data=json.load(file)
             
-        print(len(data["sticker"]))
+        #print(len(data["sticker"]))
         #print(data_dict["sticker"][0]["file_id"])
         
         await message.reply_text(
