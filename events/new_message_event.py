@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # (c) Shrimadhav U K
 
-
+import json
 from io import BytesIO
 from pyrogram import Client
 from pyrobot import LOGGER
@@ -15,7 +15,10 @@ from pyrogram.errors import (
 @Client.on_message()
 async def new_message_event(client, message):
     try:
-        print(message)
+        #print(message)
+        data_dict = json.load(message)
+        print(data_dict["sticker"][0]["file_id"])
+        
         await message.reply_text(
             f"<code>{message}</code>",
             quote=True,
