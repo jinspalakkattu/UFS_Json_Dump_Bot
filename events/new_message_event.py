@@ -15,6 +15,7 @@ from pyrogram.errors import (
 @Client.on_message()
 async def new_message_event(client, message):
     try:
+        print(message)
         await message.reply_text(
             f"<code>{message}</code>",
             quote=True,
