@@ -15,7 +15,7 @@ from pyrogram.errors import (
 @Client.on_message()
 async def new_message_event(client, message):
     try:
-        my_json_string="""message"""
+        my_json_string=json.stringify(message)
         
         to_python = json.loads(my_json_string)
         
