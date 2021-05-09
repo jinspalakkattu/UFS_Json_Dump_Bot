@@ -16,8 +16,11 @@ from pyrogram.errors import (
 async def new_message_event(client, message):
     try:
         #print(message)
-        data_dict = json.loads(str(message))
-        print(data_dict["sticker"][0]["file_id"])
+        with open(message) as file:
+            data=json.load(file)
+            
+        print(len(data["sticker"]))
+        #print(data_dict["sticker"][0]["file_id"])
         
         await message.reply_text(
             f"<code>{message}</code>",
