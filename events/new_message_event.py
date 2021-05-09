@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # (c) Shrimadhav U K
 
-import json
+import JSON
 from io import BytesIO
 from pyrogram import Client
 from pyrobot import LOGGER
@@ -15,9 +15,9 @@ from pyrogram.errors import (
 @Client.on_message()
 async def new_message_event(client, message):
     try:
-        my_json_string=json.stringify(message)
+        my_json_string=JSON.stringify(message)
         
-        to_python = json.loads(my_json_string)
+        to_python = JSON.loads(my_json_string)
         
         print(to_python['sticker'])
         #with open(JSON.stringify(message)) as file:
