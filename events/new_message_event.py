@@ -15,12 +15,14 @@ from pyrogram.errors import (
 @Client.on_message()
 async def new_message_event(client, message):
     try:
-        my_json_string=JSON.stringify(message)
+        #my_json_string=JSON.stringify(message)
         
-        to_python = JSON.loads(my_json_string)
+        #to_python = JSON.loads(my_json_string)
         
-        print(to_python['sticker'])
-        #with open(JSON.stringify(message)) as file:
+        #print(to_python['sticker'])
+        dicted = dict(message)
+        
+        with open(JSON.stringify(message)) as file:
         #    data=json.load(file)
             
         #print(len(data["sticker"]))
